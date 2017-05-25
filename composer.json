@@ -1,0 +1,12 @@
+{
+    "require": {
+        "guzzlehttp/guzzle": "6.2.x",
+        "symfony/options-resolver": "^3.2",
+        "league/container": "^2.4"
+    },
+    "autoload": {
+        "psr-4" : {
+            "Waze\\":"src/"
+        }
+    }
+}
