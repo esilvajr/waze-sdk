@@ -1,3 +1,7 @@
 /vendor/
 
 /public/
+
+/.idea/
+
+composer.lock
