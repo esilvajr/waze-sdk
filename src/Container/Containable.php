@@ -2,7 +2,6 @@
 
 namespace Waze\Container;
 
-
 interface Containable
 {
 }

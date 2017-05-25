@@ -16,11 +16,10 @@ class Container
      */
     static private $container;
 
-
     /**
      *
      */
-    static public function boot() : void
+    public static function boot() : void
     {
         self::$container = new \League\Container\Container;
         self::$container->delegate(
@@ -30,18 +29,18 @@ class Container
     }
 
     /**
-     * @return Container
+     * @return \League\Container\Container
      */
-    static public function instance() : \League\Container\Container
+    public static function instance() : \League\Container\Container
     {
         return self::$container;
     }
 
     /**
      * @param string $alias
-     * @return mixed
+     * @return Containable
      */
-    static public function get(string $alias) :  Containable
+    public static function get(string $alias) :  Containable
     {
         return self::$container->get($alias);
     }
@@ -49,11 +48,10 @@ class Container
     /**
      *
      */
-    static public function register() : void
+    public static function register() : void
     {
         self::$container->share('GuzzleClient', function () {
             return new Guzzle();
         });
     }
-
 }

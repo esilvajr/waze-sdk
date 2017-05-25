@@ -18,4 +18,12 @@ class Place
         return (new Autocomplete())->get($options);
     }
 
+    /**
+     * @param array $options
+     * @return array
+     */
+    public function details(array $options) : array
+    {
+        return (new Details())->get($options);
+    }
 }
