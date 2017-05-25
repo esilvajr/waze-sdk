@@ -5,6 +5,7 @@ namespace Waze;
 use Waze\Config\Auth;
 use Waze\Maps\Maps;
 use Waze\Container\Container;
+use Waze\Routing\Routing;
 
 /**
  * Class Waze
@@ -19,7 +20,6 @@ class Waze
      */
     public function __construct(string $key)
     {
-
         Container::boot();
         Container::instance()->share('Config\Auth', new Auth($key));
     }
@@ -30,5 +30,13 @@ class Waze
     public function maps() : Maps
     {
         return new Maps();
+    }
+
+    /**
+     * @return Routing
+     */
+    public function routing() : Routing
+    {
+        return new Routing();
     }
 }
